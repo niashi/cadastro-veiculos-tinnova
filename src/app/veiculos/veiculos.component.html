@@ -1,0 +1,148 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9 d-flex align-items-center">
+      <h1 class="text-center">Cadastro e atualização de veículos</h1>  
+    </div>
+
+    <div class="col-md-3 mt-5 mb-5 ml-5">
+      <div class="row">
+        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modal3">Cadastrar veículo 🚘</button>
+      </div>
+
+      <div class="row">
+        <button class="btn btn-outline-secondary mt-5" routerLink='/sobre'>Sobre o projeto 💡</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+  
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Veículo</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Ano</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Vendido</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor='let item of listaVeiculos'>
+              <th>{{item.id}}</th>
+              <td>{{item.veiculo}}</td>
+              <td>{{item.marca}}</td>
+              <td>{{item.ano}}</td>
+              <td>{{item.descricao}}</td>
+              <td>{{item.vendido}}</td>
+              <td>
+                <button class="btn btn-info mr-3" data-bs-toggle="modal" data-bs-target="#modal1">Editar</button> 
+                <!-- [routerLink]="['/editar', item.id] -->
+
+              </td>
+              <td>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal2">Apagar</button>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="veiculo">Veículo</label>
+            <input type="text" class="form-control" id="veiculo" placeholder="Digite o nome do veículo">
+
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" id="marca" placeholder="Digite a marca do veículo">
+
+            <label for="ano">Ano</label>
+            <input type="text" class="form-control" id="ano" placeholder="Digite o ano de fabricação do veículo">
+
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" placeholder="Digite a descrição do veículo">
+
+            <label for="vendido">Já foi vendido?</label>
+            <input type="text" class="form-control" id="vendido" placeholder="Informe se o veículo já foi vendido">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Apagar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Você tem certeza de que deseja apagar este veículo do banco de dados? Esta ação <b>não</b> poderá ser desfeita.</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Apagar</button>
+          <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cadastrar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="veiculo">Veículo</label>
+          <input type="text" class="form-control" id="veiculo" placeholder="Digite o nome do veículo">
+
+          <label for="marca">Marca</label>
+          <input type="text" class="form-control" id="marca" placeholder="Digite a marca do veículo">
+
+          <label for="ano">Ano</label>
+          <input type="text" class="form-control" id="ano" placeholder="Digite o ano de fabricação do veículo">
+
+          <label for="descricao">Descrição</label>
+          <input type="text" class="form-control" id="descricao" placeholder="Digite a descrição do veículo">
+
+          <label for="vendido">Já foi vendido?</label>
+          <input type="text" class="form-control" id="vendido" placeholder="Informe se o veículo já foi vendido">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='cadastrar()'>Cadastrar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
