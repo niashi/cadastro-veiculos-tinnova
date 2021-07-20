@@ -13,11 +13,11 @@
       - Todos
       - Por ID
         
- - [] Inserir veículos
+ - [ ] Inserir veículos
     
- - [] Atualizar informações
+ - [ ] Atualizar informações
     
- - [] Excluir
+ - [ ] Excluir
       - Por id
 
 ### Documentação:
@@ -27,3 +27,5 @@
 ### Para realização dos testes:
 
     https://cadastro-veiculos.netlify.app/
+    
+> OBS.: o servidor do Heroku pode demorar para ser iniciado, sendo assim, é possível que a lista de veículos demore a aparecer.
